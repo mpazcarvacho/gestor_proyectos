@@ -18,8 +18,8 @@ class ProyectsController < ApplicationController
       flash[:notice] = "exito"
       redirect_to proyects_new_url
     else
-        flash[:error] = "Ocurrió un error"
-        redirect_to proyects_new_url
+      flash[:error] = "Ocurrió un error"
+      redirect_to proyects_new_url
     end
 
   end

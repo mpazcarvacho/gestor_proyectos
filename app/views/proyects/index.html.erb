@@ -1,7 +1,6 @@
-<h1>Proyects#index</h1>
-<p>Find me in app/views/proyects/index.html.erb</p>
+<h1>Dashboard</h1>
 
-<table class = "table-dark">
+<table class = "table-dark table">
   <thead>
     <tr>
       <th scope = "col">Nombre</th>
@@ -14,11 +13,11 @@
   <tbody>
 		<% @proyects.each do |proyect| %>
 			<tr>
-				<% proyect.name, scope = "row" %>
-				<% proyect.description, scope = "row" %>
-        <% proyect.start_date, scope = "row" %>
-        <% proyect.finish_date, scope = "row" %>
-        <% proyect.status, scope = "row" %>
+				<td><%= proyect.name %></td>
+				<td><%= proyect.description %></td>
+        <td><%= proyect.start_date %></td>
+        <td><%= proyect.finish_date %></td>
+        <td><%= proyect.status %></td>
 			<tr>
 		<% end %>
   </tbody>
