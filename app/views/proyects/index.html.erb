@@ -1,8 +1,12 @@
 <h1>Dashboard</h1>
 
-<%= form_tag proyects_index_path, method: :get do %>
-  <%= select_tag(:search, options_for_select(['Propuesta', 'En progreso', 'Terminado'])) %>
-  <%= submit_tag 'Filtrar'%>
+<%= form_tag proyects_index_path, method: :get, class: "form-inline my-2 my-lg-0 d-flex justify-content-end" do %>
+  
+  <div class="nav " id="search">
+    <%= select_tag(:search, options_for_select(['Agendado', 'En progreso', 'Terminado']), {class: "form-control mr-sm-2"})%>
+    <%= submit_tag 'Filtrar', class:"btn btn-success my-2 my-sm-0"%>
+  </div>
+
 <% end %>
 
 <table class = "table-dark table">

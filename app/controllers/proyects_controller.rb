@@ -1,4 +1,6 @@
 class ProyectsController < ApplicationController
+  http_basic_authenticate_with name: "desafiovamoscontodo", password: "XAHTJEAS23123%23", only: :index
+  
   def index
 
     if params[:search]
@@ -11,8 +13,10 @@ class ProyectsController < ApplicationController
 
   def new
     @proyect = Proyect.new
+    
   end
 
+  
   def create
     # Proyect.create(name: params[:name], description: params[:description], start_date: params[:start_date], finish_date: params[:finish_date], status: params[:status])
     puts params
@@ -21,12 +25,16 @@ class ProyectsController < ApplicationController
       finish_date: params[:proyect][:finish_date], status: params[:proyect][:status])
 
     if @proyect.save
-      flash[:notice] = "exito"
-      redirect_to proyects_new_url
+      flash[:notice] = "Proyecto creado existosamente"
+      redirect_to proyects_new_path
     else
-      flash[:error] = "Ocurrió un error"
-      redirect_to proyects_new_url
+      flash[:error] = "Ocurrió un error. Verifica que los campos Nombre y Descripción estén completados."
+      redirect_to proyects_new_path
+      
+
     end
 
   end
 end
+
+
