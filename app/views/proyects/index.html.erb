@@ -1,0 +1,25 @@
+<h1>Proyects#index</h1>
+<p>Find me in app/views/proyects/index.html.erb</p>
+
+<table class = "table-dark">
+  <thead>
+    <tr>
+      <th scope = "col">Nombre</th>
+      <th scope = "col">Descripción</th>
+      <th scope = "col">Fecha de inicio</th>
+      <th scope = "col">Fecha de término</th>
+      <th scope = "col">Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+		<% @proyects.each do |proyect| %>
+			<tr>
+				<% proyect.name, scope = "row" %>
+				<% proyect.description, scope = "row" %>
+        <% proyect.start_date, scope = "row" %>
+        <% proyect.finish_date, scope = "row" %>
+        <% proyect.status, scope = "row" %>
+			<tr>
+		<% end %>
+  </tbody>
+</table>

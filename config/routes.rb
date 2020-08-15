@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'pages/index'
-  get 'pages/new'
-  get 'pages/create'
-  root 'pages#index'
+  get 'proyects/index'
+  get 'proyects/new'
+  post 'proyects/create'
+  root 'proyects#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
