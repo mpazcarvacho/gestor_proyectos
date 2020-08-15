@@ -1,6 +1,12 @@
 class ProyectsController < ApplicationController
   def index
-    @proyects = Proyect.all
+
+    if params[:search]
+      @proyects = Proyect.where(status: params[:search])
+    else
+      @proyects = Proyect.all
+    end
+
   end
 
   def new

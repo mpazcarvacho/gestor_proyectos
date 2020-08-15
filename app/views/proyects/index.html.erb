@@ -1,5 +1,10 @@
 <h1>Dashboard</h1>
 
+<%= form_tag proyects_index_path, method: :get do %>
+  <%= select_tag(:search, options_for_select(['Propuesta', 'En progreso', 'Terminado'])) %>
+  <%= submit_tag 'Filtrar'%>
+<% end %>
+
 <table class = "table-dark table">
   <thead>
     <tr>
